@@ -2,11 +2,11 @@ from django.db import models
 
 
 class Sentence(models.Model):
-    slug = models.SlugField(max_length=255, unique=True, verbose_name="URL")
-    rus_lang = models.CharField(max_length=1000)
-    eng_lang = models.CharField(max_length=1000)
-    created_at = models.DateTimeField(auto_now_add=True)
     time = models.ForeignKey('Time', on_delete=models.PROTECT)
+    slug = models.SlugField(max_length=255, unique=True, verbose_name="URL")
+    eng_lang = models.CharField(max_length=1000)
+    rus_lang = models.CharField(max_length=1000)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.eng_lang
