@@ -14,7 +14,7 @@ class Sentence(models.Model):
 
 class Time(models.Model):
     name_time = models.CharField(max_length=100)
-    parent_time = models.ForeignKey('self', on_delete=models.PROTECT())
+    parent_time = models.ForeignKey('self', on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
