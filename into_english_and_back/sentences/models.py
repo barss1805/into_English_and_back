@@ -6,7 +6,7 @@ class Sentence(models.Model):
     rus_lang = models.CharField(max_length=1000)
     eng_lang = models.CharField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
-    time = models.ForeignKey('Time', on_delete=models.PROTECT())
+    time = models.ForeignKey('Time', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.eng_lang
